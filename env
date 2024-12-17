@@ -1,0 +1,28 @@
+#!/bin/bash
+# armystice env scripts should setup the module environment 
+# (including environment variables, files and directories)
+#
+# READ ME!
+# env scripts should always be imported/ sourced before working with a module
+SCRIPT_FILE=$(readlink -f ${BASH_SOURCE[0]})
+SCRIPT_DIR=$(dirname ${SCRIPT_FILE})
+
+export ARMYSTICE_HOME="${HOME}/.armystice"
+export ARMYSTICE_ETC="${ARMYSTICE_HOME}/etc"
+export ARMYSTICE_MOD_HOME="${HOME}/.armystice"
+export ARMYSTICE_GIT_PUBLIC="https://github.com/todo..."
+
+mkdir -p "${ARMYSTICE_HOME}"
+mkdir -p "${ARMYSTICE_ETC}"
+mkdir -p "${ARMYSTICE_MOD_HOME}"
+
+cd "${ARMYSTICE_HOME}"
+
+function log {
+    timestamp=$(date -Iseconds)
+    script_file="$1"
+    level="$2" # info, warn
+    message="$3"
+    
+    echo "${timestamp} ${script_file} ${level}: $3"
+}

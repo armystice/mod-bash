@@ -1,12 +1,15 @@
 #!/bin/bash
 # A script that will install and initialise this mod remotely
 #
-INIT_SCRIPT_URL="http://vfs1.home3:3000/armystice/mod-bash/raw/branch/main/init"
+INIT_SCRIPT_REPO="http://vfs1.home3:3000/armystice/mod-bash"
+INIT_SCRIPT_URL="${INIT_SCRIPT_REPO}/raw/branch/main/init"
 INIT_SCRIPT_PATH="/tmp/armystice-mod-bash.init"
 
 curl -o "${INIT_SCRIPT_PATH}" "${INIT_SCRIPT_URL}"
 if [ $? -eq 0 ] && [ -f "${INIT_SCRIPT_PATH}" ]; then
-    bash "${INIT_SCRIPT_PATH}"
+    source "${INIT_SCRIPT_PATH}"
+    
+    cd "${ARMYSTICE_MOD_HOME}" && git clone "${INIT_SCRIPT_REPO}.git"
     rm "${INIT_SCRIPT_PATH}"
 else
     echo "env download failed"

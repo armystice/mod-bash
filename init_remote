@@ -1,13 +1,13 @@
 #!/bin/bash
 # A script that will install and initialise this mod remotely
 #
-ENV_SCRIPT_URL="http://vfs1.home3:3000/armystice/mod-bash/raw/branch/main/init"
-ENV_SCRIPT_PATH="/tmp/${ENV_SCRIPT_URL}"
+INIT_SCRIPT_URL="http://vfs1.home3:3000/armystice/mod-bash/raw/branch/main/init"
+INIT_SCRIPT_PATH="/tmp/${ENV_SCRIPT_URL}"
 
-curl -o "${ENV_SCRIPT_PATH}"
-if [ $? -eq 0 ] && [ -f "${ENV_SCRIPT_PATH}" ]; then
-    bash ${ENV_SCRIPT_PATH}
-    rm "${ENV_SCRIPT_PATH}"
+curl -o "${INIT_SCRIPT_PATH}" "${INIT_SCRIPT_URL}"
+if [ $? -eq 0 ] && [ -f "${INIT_SCRIPT_PATH}" ]; then
+    bash "${INIT_SCRIPT_PATH}"
+    rm "${INIT_SCRIPT_PATH}"
 else
     echo "env download failed"
 fi

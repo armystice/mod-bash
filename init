@@ -1,16 +1,16 @@
 #!/bin/bash
-# armystice env scripts should setup the module environment 
+# armystice init scripts should setup the module environment 
 # (including environment variables, files and directories)
 #
 # READ ME!
 # env scripts should always be imported/ sourced before working with a module
+#
 SCRIPT_FILE=$(readlink -f ${BASH_SOURCE[0]})
 SCRIPT_DIR=$(dirname ${SCRIPT_FILE})
 
 export ARMYSTICE_HOME="${HOME}/.armystice"
 export ARMYSTICE_ETC="${ARMYSTICE_HOME}/etc"
-export ARMYSTICE_MOD_HOME="${HOME}/.armystice"
-export ARMYSTICE_GIT_PUBLIC="https://github.com/todo..."
+export ARMYSTICE_MOD_HOME="${ARMYSTICE_HOME}/mod"
 
 mkdir -p "${ARMYSTICE_HOME}"
 mkdir -p "${ARMYSTICE_ETC}"
@@ -26,3 +26,6 @@ function log {
     
     echo "${timestamp} ${script_file} ${level}: $3"
 }
+
+# Setup!
+mkdir -p "${ARMYSTICE_HOME}/mod"

@@ -1,0 +1,13 @@
+#!/bin/bash
+# A script that will install and initialise this mod remotely
+#
+ENV_SCRIPT_URL="https://github.com/armystice/mod-bash/refs/heads/master/init"
+ENV_SCRIPT_PATH="/tmp/${ENV_SCRIPT_URL}"
+
+curl -o "${ENV_SCRIPT_PATH}"
+if [ $? -eq 0 ] && [ -f "${ENV_SCRIPT_PATH}" ]; then
+    bash ${ENV_SCRIPT_PATH}
+    rm "${ENV_SCRIPT_PATH}"
+else
+    echo "env download failed"
+fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 # A script that will install and initialise this mod remotely
 #
-ENV_SCRIPT_URL="https://github.com/armystice/mod-bash/refs/heads/master/init"
+ENV_SCRIPT_URL="http://vfs1.home3:3000/armystice/mod-bash/raw/branch/main/init"
 ENV_SCRIPT_PATH="/tmp/${ENV_SCRIPT_URL}"
 
 curl -o "${ENV_SCRIPT_PATH}"

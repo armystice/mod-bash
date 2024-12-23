@@ -7,7 +7,7 @@ if [ -n "$1" ]; then
 fi
 
 CURRENT_DIR=$(pwd)
-if [[ "${CURRENT_DIR}" =~ "/mnt/[a-zA-z0-9\-\_]*" ]]; then
+if [[ "${CURRENT_DIR}" =~ "\/mnt\/[\w]*" ]]; then
     echo "Setting up mount directories..."
 
     HOME_DIR="home/${USER}"

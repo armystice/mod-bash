@@ -14,6 +14,8 @@ MOD_NAME="$2"
 if [ "${SCRIPT_OPERATION}" == "install" ] || [ "${SCRIPT_OPERATION}" == "update" ]; then
     log "${SCRIPT_FILE}" "info" "Updating module ${MOD_NAME}"
 
+    cd "${ARMYSTICE_MOD_HOME}"
+    
     ARMYS_MOD_REPO="${ARMYSTICE_GIT_PUBLIC}/${MOD_NAME}"
     git clone "${ARMYS_MOD_REPO}"
     cd "${MOD_NAME}"

@@ -10,7 +10,7 @@ SCRIPT_DIR=$(dirname ${SCRIPT_FILE})
 BASHRC_FILE="${HOME}/.bashrc"
 USER_HOME=$(eval echo ~${SUDO_USER})
 
-export ARMYSTICE_GIT_HOME="${ARMYSTICE_GIT_HOME:-'https://github.com/armystice/mod-bash.git'}"
+export ARMYSTICE_GIT_HOME="${ARMYSTICE_GIT_HOME:-'https://github.com/armystice/'}"
 export ARMYSTICE_GIT_PUBLIC="${ARMYSTICE_GIT_HOME}" # todo: Change to github
 export ARMYSTICE_HOME="${USER_HOME}/.armystice"
 export ARMYSTICE_ETC="${ARMYSTICE_HOME}/etc"

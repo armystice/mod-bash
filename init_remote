@@ -1,7 +1,9 @@
 #!/bin/bash
 # A script that will install and initialise this mod remotely
 #
-INIT_SCRIPT_REPO="http://vfs1.home3:3000/armystice/mod-bash"
+ARMYSTICE_GIT_HOME="${ARMYSTICE_GIT_HOME:-'https://github.com/armystice/'}"
+
+INIT_SCRIPT_REPO="${ARMYSTICE_GIT_HOME}/mod-bash"
 INIT_SCRIPT_URL="${INIT_SCRIPT_REPO}/raw/branch/main/init"
 INIT_SCRIPT_PATH="/tmp/armystice-mod-bash.init"
 

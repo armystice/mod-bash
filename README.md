@@ -1,7 +1,6 @@
 Contains various useful bash scripts, as well as being the entrypoint for the armystice script infrastructure.
 
 # Quickstart
-(First Time only) Install mod-bash (see https://github.com/armystice/mod-bash/tree/main)
 ```bash
 # Run once on the host to initialise the $HOME/.armystice environment and install mod-bash:
 # (executing this again will just update mod-bash)

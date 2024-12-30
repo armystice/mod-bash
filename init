@@ -24,6 +24,7 @@ fi
 mkdir -p "${ARMYSTICE_HOME}"
 mkdir -p "${ARMYSTICE_ETC}"
 mkdir -p "${ARMYSTICE_MOD_HOME}"
+mkdir -p "${ARMYSTICE_SHORTCUTS_DIR}"
 
 cd "${ARMYSTICE_HOME}"
 

@@ -10,6 +10,7 @@ SCRIPT_DIR=$(dirname ${SCRIPT_FILE})
 BASHRC_FILE="${HOME}/.bashrc"
 
 export ARMYSTICE_GIT_HOME="http://vfs1.home3:3000/armystice"
+export ARMYSTICE_GIT_PUBLIC="${ARMYSTICE_GIT_HOME}" # todo: Change to github
 export ARMYSTICE_HOME="${HOME}/.armystice"
 export ARMYSTICE_ETC="${ARMYSTICE_HOME}/etc"
 export ARMYSTICE_MOD_HOME="${ARMYSTICE_HOME}/mod"

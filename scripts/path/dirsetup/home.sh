@@ -5,10 +5,10 @@ fi
 
 CURRENT_DIR=$(pwd)
 if [[ "${CURRENT_DIR}" =~ ".*/home" ]]; then
-    mkdir -vp "${HOME}/Documents/GitRepos/github"
-    mkdir -vp "${HOME}/Downloads"
-    mkdir -vp "${HOME}/Games/SteamLibrary"
+    sudo mkdir -vp "Documents/GitRepos/github"
+    sudo mkdir -vp "Downloads"
+    sudo mkdir -vp "Games/SteamLibrary"
 
-    chown "${USER}" "${CURRENT_DIR}" 
+    sudo chown "${USER}" ./* 
 fi
 

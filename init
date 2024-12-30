@@ -3,14 +3,23 @@
 # (including environment variables, files and directories)
 #
 # READ ME!
-# env scripts should always be imported/ sourced before working with a module
+# init scripts should always be imported/ sourced before working with a module
 #
 SCRIPT_FILE=$(readlink -f ${BASH_SOURCE[0]})
 SCRIPT_DIR=$(dirname ${SCRIPT_FILE})
+BASHRC_FILE="${HOME}/.bashrc"
 
+export ARMYSTICE_GIT_HOME="http://vfs1.home3:3000/armystice"
 export ARMYSTICE_HOME="${HOME}/.armystice"
 export ARMYSTICE_ETC="${ARMYSTICE_HOME}/etc"
 export ARMYSTICE_MOD_HOME="${ARMYSTICE_HOME}/mod"
+export ARMYSTICE_SHORTCUTS_DIR="${ARMYSTICE_HOME}/shortcuts"
+
+SHORTCUTS_BASHRC="export PATH=\"$\{PATH\}:${ARMYSTICE_SHORTCUTS_DIR}\""
+SHORTCUTS_ADDED=$(grep "${SHORTCUTS_BASHRC}" "${BASHRC_FILE}" | wc -l)
+if [ "${SHORTCUTS_ADDED}" -lt 1 ]; then
+    echo "${SHORTCUTS_BASHRC}" >> "${BASHRC_FILE}" 
+fi
 
 mkdir -p "${ARMYSTICE_HOME}"
 mkdir -p "${ARMYSTICE_ETC}"

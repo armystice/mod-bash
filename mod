@@ -11,7 +11,7 @@ source "${SCRIPT_DIR}/init"
 SCRIPT_OPERATION="$1"
 MOD_NAME="$2"
 # git clone ...
-if [ "${ARMYS_OPERATION}" == "install" ] || [ "${ARMYS_OPERATION}" == "update" ]; then
+if [ "${SCRIPT_OPERATION}" == "install" ] || [ "${SCRIPT_OPERATION}" == "update" ]; then
     log "${SCRIPT_FILE}" "info" "Updating module ${MOD_NAME}"
 
     cd "${ARMYSTICE_MOD_HOME}"
